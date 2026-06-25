@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thejaswini Thatigutla — Resume</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background: #0d1117;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* ── Left panel: LaTeX source ── */
+    #left {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      border-right: 2px solid #30363d;
+    }
+
+    #left-header {
+      background: #161b22;
+      color: #8b949e;
+      padding: 10px 16px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #30363d;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #left-header span { color: #58a6ff; font-weight: 600; }
+
+    #font-controls {
+      margin-left: auto;
+      display: flex;
+      gap: 6px;
+    }
+
+    #font-controls button {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      padding: 3px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    #font-controls button:hover { background: #30363d; }
+
+    #code-area {
+      flex: 1;
+      overflow: auto;
+      padding: 16px;
+    }
+
+    pre {
+      color: #c9d1d9;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Simple LaTeX syntax highlight */
+    .cmd  { color: #79c0ff; }   /* \commands */
+    .brace{ color: #ffa657; }   /* {braces} */
+    .comment { color: #8b949e; font-style: italic; }
+    .env  { color: #7ee787; }   /* begin/end */
+
+    /* ── Right panel: PDF ── */
+    #right {
+      width: 52%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #right-header {
+      background: #161b22;
+      color: #8b949e;
+      padding: 10px 16px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #30363d;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #right-header span { color: #58a6ff; font-weight: 600; }
+
+    #right-header a {
+      margin-left: auto;
+      color: #58a6ff;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    #right-header a:hover { text-decoration: underline; }
+
+    embed {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #pdf-frame {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left: LaTeX source -->
+  <div id="left">
+    <div id="left-header">
+      <span>resume.tex</span>
+      — LaTeX source
+      <div id="font-controls">
+        <button onclick="changeFont(-1)">A−</button>
+        <button onclick="changeFont(1)">A+</button>
+      </div>
+    </div>
+    <div id="code-area">
+      <pre id="code">Loading source…</pre>
+    </div>
+  </div>
+
+  <!-- Right: PDF -->
+  <div id="right">
+    <div id="right-header">
+      <span>resume.pdf</span>
+      — Live Preview
+      <a href="resume.pdf" download>⬇ Download PDF</a>
+    </div>
+    <embed src="resume.pdf" type="application/pdf" id="pdf-frame">
+  </div>
+
+  <script>
+    // Load and display the LaTeX source
+    fetch('resume.tex')
+      .then(r => r.text())
+      .then(text => {
+        // Simple syntax highlighting
+        let html = text
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          // comments
+          .replace(/(%.+)/g, '<span class="comment">$1</span>')
+          // \begin \end
+          .replace(/(\\(?:begin|end)\{[^}]+\})/g, '<span class="env">$1</span>')
+          // other \commands
+          .replace(/(\\[a-zA-Z@]+)/g, '<span class="cmd">$1</span>')
+          // {braces}
+          .replace(/(\{|\})/g, '<span class="brace">$1</span>');
+        document.getElementById('code').innerHTML = html;
+      })
+      .catch(() => {
+        document.getElementById('code').textContent = 'Could not load source file.';
+      });
+
+    // Font size control
+    let fontSize = 13;
+    function changeFont(delta) {
+      fontSize = Math.max(9, Math.min(22, fontSize + delta));
+      document.querySelector('pre').style.fontSize = fontSize + 'px';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+%-------------------------
+% Resume — Thejaswini Thatigutla
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.6in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section heading: minimal space above, tight below
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule\vspace{2pt}]
+
+\pdfgentounicode=1
+
+%--- Commands ---
+\newcommand{\resumeItem}[1]{\item\small{#1}\vspace{1pt}}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \small#3 & \small\textit{#4} \\
+    \end{tabular*}\vspace{2pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & \textbf{\small #2}\\
+  \end{tabular*}\vspace{2pt}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}, topsep=0pt, partopsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=2pt, itemsep=1pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Thejaswini Thatigutla} \\ \vspace{10pt}
+    \small
+    \faEnvelope\kern3pt
+    \href{mailto:thejaswini.t9920@gmail.com}{\underline{thejaswini.t9920@gmail.com}}
+    \kern10pt\textbar\kern10pt
+    \faLinkedin\kern3pt LinkedIn
+    \kern10pt\textbar\kern10pt
+    \faGithub\kern3pt
+    \href{https://github.com/tthejaswini}{\underline{tthejaswini}}
+    \kern10pt\textbar\kern10pt
+    \small\faCode\kern3pt LeetCode
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Indian Institute of Information Technology, Gwalior}{Gwalior, India}
+      {\textbf{B.Tech in Information Technology}}{2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{CGPA: \textbf{8.45}}
+        \resumeItem{Coursework: Data Structures \& Algorithms, Design \& Analysis of Algorithms, Object-Oriented Programming, Operating Systems, Database Management Systems, Computer Networks, Digital Logic Design, Discrete Mathematics}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Indian Institute of Technology Madras}{Online}
+      {Foundational Certificate in Data Science and Programming}{2024 -- 2025}
+
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Amazon}{Bangalore, India}
+      {Software Development Engineer Intern — EPIC Team}{May 2026 -- July 2026}
+      \resumeItemListStart
+        \resumeItem{Built \textbf{CloudWatch monitoring dashboards} for the EPIC team to visualize production metrics and system health in real time.}
+        \resumeItem{Configured \textbf{CloudWatch alarms} and metric filters to proactively detect production anomalies and trigger automated alerts.}
+        \resumeItem{Worked with \textbf{AWS services} — S3, EventBridge, API Gateway, Lambda, SQS, SNS — and developed backend components in \textbf{Java, JavaScript, and TypeScript}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+        {\textbf{Skill Swap Platform} $|$ \emph{React, Node.js, Express.js, MongoDB, REST APIs}}{2025}
+        \resumeItemListStart
+          \resumeItem{Built a full-stack peer-to-peer skill exchange platform with secure authentication and user-matching logic.}
+          \resumeItem{Designed RESTful APIs for seamless frontend-backend integration; built a responsive UI across devices.}
+        \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, partopsep=0pt, itemsep=3pt]
+    \small\item{
+      \begin{tabular}[t]{@{}l@{\hskip 10pt}l}
+        \textbf{Languages}         & C, C++, Java, Python, JavaScript, TypeScript, SQL, Verilog \\[2pt]
+        \textbf{Web \& Frameworks} & HTML, CSS, React, Node.js, Express.js \\[2pt]
+        \textbf{AWS / Cloud}       & CloudWatch, S3, EventBridge, API Gateway, Lambda, SQS, SNS \\[2pt]
+        \textbf{Databases}         & MySQL, MongoDB \\[2pt]
+        \textbf{Tools}             & Git, GitHub, VS Code, Postman, Quip \\[2pt]
+      \end{tabular}
+    }
+  \end{itemize}\vspace{-6pt}
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements \& Activities}
+  \begin{itemize}[leftmargin=0.2in, label=\small$\bullet$, topsep=0pt, partopsep=0pt, itemsep=3pt, parsep=0pt]
+    \small\item \textbf{Flipkart Girls Wanna Code (GWC) 7.0} \textit{(2025)} — Selected among the \textbf{top 200 from 25,000+} applicants nationwide in Flipkart's flagship coding program for women in tech.
+
+    \small\item \textbf{Executive Member, Student Gyan Movement} — IIIT Gwalior: Organized and managed academic support initiatives for students across the institute.
+
+    \small\item \textbf{Executive Member, Student Activity Council (Welfare)} — IIIT Gwalior: Contributed to student welfare programs and coordinated institute-level events.
+
+    \small\item \textbf{Organizer, Ideathon – Infostav Tech Fest} — IIIT Gwalior: Planned and executed the ideation event; handled coordination, participant management, and on-ground execution.
+
+    \small\item \textbf{Alumni Meet '26 Representative} — IIIT Gwalior: Coordinated alumni interaction, event logistics, and session management.
+  \end{itemize}
+
+\end{document}
